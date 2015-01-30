@@ -69,7 +69,7 @@
 	<!-- LOGO -->
 	<div class="navbar">
 	<div class="navbar-inner">
-		<a class="brand" href="index.php"><img src="<?php echo base_url('assets/themes/images/new_logo.png');?>" alt="Bootsshop"></a>
+		<a class="brand" href="<?= base_url();?>"><img src="<?php echo base_url('assets/themes/images/new_logo.png');?>" alt="Bootsshop"></a>
 	</div>
 	</div>
 

@@ -6,10 +6,10 @@
 <div class="container">
 <h3 class="title"><span>Registration</span></h3>
 <ul>
-    <li><a href="index.php">Home</a></li>
+    <li><a href="<?= base_url();?>">Home</a></li>
 </ul>
   <div class="well">
-    <form class="form-horizontal" action="<?= base_url().'index.php/futsal_crud/insert';?>" method="POST">
+    <form class="form-horizontal" action="<?= base_url().'futsal_crud/insert_user';?>" method="POST">
       <h3>Your Personal Information</h3>
       <div class="control-group">
         <label class="control-label" for="firts_name">First name <sup>*</sup></label>

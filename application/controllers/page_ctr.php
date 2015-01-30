@@ -48,5 +48,12 @@ class Page_ctr extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function operator_reg()
+	{
+		$this->load->view('header');
+		$this->load->view('operator_registration');
+		$this->load->view('footer');
+	}
+
 
 }

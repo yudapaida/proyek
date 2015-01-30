@@ -10,7 +10,7 @@
 			parent::__construct();
 		}
 
-		public function insert(){
+		public function user_insert(){
 
 		$query ="SELECT max(id_user)+1 as id from user";
 		$foreign = $this->db->query($query);
@@ -37,5 +37,31 @@
 		$data_user['group'] = 'user';
 		$insert_user = $this->db->insert('user', $data_user);
 		return $insert_user && $result;
+		}
+
+		public function operator_insert()
+		{
+			$query ="SELECT max(id_user)+1 as id from user";
+			$foreign = $this->db->query($query);
+			foreach ($foreign->result() as $key) {
+				$coba = $key->id;
+			}
+
+			//insert data member
+			$data['nama_futsal']=$_POST['nama_futsal'];
+			$data['alamat']=$_POST['alamat'];
+			$data['deskripsi']=$_POST['deskripsi'];
+			$data['gambar']=$_POST['gambar'];
+			$data['id_user']= $coba;
+
+			$result = $this->db->insert('operator', $data);
+		
+			//insert data user
+			$password =$_POST['password'];
+			$data_user['username']=$_POST['username'];
+			$data_user['password'] = md5($password);
+			$data_user['group'] = 'operator';
+			$insert_user = $this->db->insert('user', $data_user);
+			return $insert_user && $result;	
 		}
 	}

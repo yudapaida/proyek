@@ -1,22 +1,14 @@
 <?php
-	/**
-	* 
-	*/
-	class Futsal_crud extends CI_Controller
+	class Operator_crud extends CI_Controller
 	{
 		
 		public function __construct()
 		{
 			parent::__construct();
+			//$this->load->helper(array('url', 'form'));
 		}
 
-		public function insert_user(){
-			$this->load->model('Crud_model','crud',TRUE);
-			$this->crud->user_insert();
-			redirect(base_url());
-		}
-
-		public function insert_operator()
+		public function do_upload()
 		{
 			$config['upload_path'] = "futsal/assets/themes/images/carousel/";
 			$config['allowed_types'] = 'gif|jpg|png';

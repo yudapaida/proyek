@@ -62,7 +62,7 @@
 	<!-- LOGO -->
 	<div class="navbar">
 	<div class="navbar-inner">
-		<a class="brand" href="index.php"><img src="<?php echo base_url('assets/themes/images/new_logo.png');?>" alt="Bootsshop"></a>
+		<a class="brand" href="<?= base_url();?>"><img src="<?php echo base_url('assets/themes/images/new_logo.png');?>" alt="Bootsshop"></a>
 	</div>
 	</div>
 
@@ -92,7 +92,7 @@
 		  		<div class="<?php if ($i==0)echo 'item active'; else echo 'item'; $i++;?>">
 				<div class="row">
 					<div class="span6">
-						<img src="<?php $logo=$item['logo'];
+						<img src="<?php $logo=$item['gambar'];
 										$url = "assets/themes/images/carousel/".$logo;
 										echo base_url($url);?>" alt="#" />
 					</div>
