@@ -28,7 +28,7 @@
 		<?php if($this->session->userdata('akun') ==""){ ?>
 		<div class="offset6 span6 right-align loginArea">
 			<a href="#login" role="button" data-toggle="modal"><span class="btn btn-mini"> Login  </span></a> 
-			<a href="register.php"><span class="btn btn-mini"> Register  </span></a> 
+			<a href="<?php echo base_url();?>page_ctr/reg_opt"><span class="btn btn-mini"> Register  </span></a> 
 		</div>
 		<?php }else{ ?>
 		<div class="offset6 span6 right-align loginArea">

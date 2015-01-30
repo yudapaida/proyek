@@ -34,5 +34,19 @@ class Page_ctr extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function reg_opt()
+	{
+		$this->load->view('header');
+		$this->load->view('reg_option');
+		$this->load->view('footer');
+	}
+
+	public function user_reg()
+	{
+		$this->load->view('header');
+		$this->load->view('user_registration');
+		$this->load->view('footer');
+	}
+
 
 }
