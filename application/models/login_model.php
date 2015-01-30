@@ -8,7 +8,7 @@
     }
 	
 	function login($username, $password){
-		$sql = 'SELECT * FROM user WHERE username="'.$username.'" AND password="'.$password.'";';
+		$sql = 'SELECT * FROM user WHERE username="'.$username.'" AND password="'.md5($password).'";';
 		$hasil=$this->db->query($sql);
 		
 	
