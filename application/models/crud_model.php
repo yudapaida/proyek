@@ -12,7 +12,7 @@
 
 		public function insert(){
 
-		$query ="SELECT max(id)+1 as id from user";
+		$query ="SELECT max(id_user)+1 as id from user";
 		$foreign = $this->db->query($query);
 		foreach ($foreign->result() as $key) {
 			$coba = $key->id;
@@ -34,7 +34,7 @@
 		$password =$_POST['password'];
 		$data_user['username']=$_POST['username'];
 		$data_user['password'] = md5($password);
-		$data_user['gorup'] = 'user';
+		$data_user['group'] = 'user';
 		$insert_user = $this->db->insert('user', $data_user);
 		return $insert_user && $result;
 		}
