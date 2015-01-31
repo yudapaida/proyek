@@ -31,7 +31,7 @@ class Login_ctr extends CI_Controller {
 
 	public function logout(){
 		$this->session->unset_userdata(array('username'=>""));
-		// $this->session->session_destroy();
+		$this->session->sess_destroy();
 		redirect('page_ctr/index');
 	}
 
