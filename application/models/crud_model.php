@@ -51,7 +51,7 @@
 			$data['nama_futsal']=$_POST['nama_futsal'];
 			$data['alamat']=$_POST['alamat'];
 			$data['deskripsi']=$_POST['deskripsi'];
-			$data['gambar']=$_POST['gambar'];
+			$data['gambar']=$_POST['userfile'];
 			$data['id_user']= $coba;
 
 			$result = $this->db->insert('operator', $data);

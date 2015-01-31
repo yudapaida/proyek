@@ -9,7 +9,7 @@
     <li><a href="<?= base_url();?>">Home</a></li>
 </ul>
   <div class="well">
-    <form class="form-horizontal" action="<?= base_url().'futsal_crud/insert_operator';?>" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" action="<?= base_url();?>futsal_crud/do_upload" method="POST" enctype="multipart/form-data">
       <h3>Your Personal Information</h3>
       <div class="control-group">
         <label class="control-label" for="nama_futsal">Futsal Name<sup>*</sup></label>
@@ -44,12 +44,12 @@
       <div class="control-group">
         <label class="control-label" for="gambar">Picture<sup>*</sup></label>
         <div class="controls">
-          <input type="file" id="gambar" name="gambar">
+          <input type="file" name="userfile"/>
         </div>
       </div> 
       <div class="control-group">
         <div class="controls">
-          <input class="btn btn-large" type="submit" value="Register">
+          <input class="btn btn-large" type="submit" value="Register"/>
         </div>
       </div>
            
@@ -60,3 +60,14 @@
   </div>
 </div>
 </section>
+
+<!-- <form action="<?= base_url();?>futsal_crud/do_upload" method="POST"   enctype="multipart/form-data">
+
+<input type="file" name="gambar" size="20" />
+
+<br /><br />
+
+<input type="submit" value="upload" />
+
+</form>
+ -->
