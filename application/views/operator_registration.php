@@ -9,7 +9,7 @@
     <li><a href="<?= base_url();?>">Home</a></li>
 </ul>
   <div class="well">
-    <form class="form-horizontal" action="<?= base_url();?>futsal_crud/do_upload" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" action="<?= base_url();?>futsal_crud/insert_operator" method="POST" enctype="multipart/form-data">
       <h3>Your Personal Information</h3>
       <div class="control-group">
         <label class="control-label" for="nama_futsal">Futsal Name<sup>*</sup></label>
