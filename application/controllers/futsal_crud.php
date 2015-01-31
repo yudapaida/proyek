@@ -37,8 +37,12 @@
 		}
 		else
 		{
-			//$data = array('unggah_data' => $this->upload->data());
-
+			$data = array('unggah_data' => $this->upload->data());
+			foreach ($data as $value) {
+				$filename = $value['file_name'];
+				$this->load->model('Crud_model','crud'.TRUE);
+				$this->crud->operator_insert($filename);
+			}
 			//$this->load->view('berhasil');
 			redirect(base_url());
 		}

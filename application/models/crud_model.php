@@ -8,6 +8,7 @@
 		public function __construct()
 		{
 			parent::__construct();
+
 		}
 
 		public function user_insert(){
@@ -39,7 +40,7 @@
 		return $insert_user && $result;
 		}
 
-		public function operator_insert()
+		public function operator_insert($filename)
 		{
 			$query ="SELECT max(id_user)+1 as id from user";
 			$foreign = $this->db->query($query);
@@ -51,7 +52,7 @@
 			$data['nama_futsal']=$_POST['nama_futsal'];
 			$data['alamat']=$_POST['alamat'];
 			$data['deskripsi']=$_POST['deskripsi'];
-			$data['gambar']=$_POST['userfile'];
+			$data['gambar']=$filename;
 			$data['id_user']= $coba;
 
 			$result = $this->db->insert('operator', $data);
