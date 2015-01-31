@@ -13,6 +13,16 @@ class Page_ctr extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function index_user()
+	{
+		$this->load->view('header');
+		$this->load->model('model_index');
+		$data = $this->model_index->getOperator();	
+		$data['data']=$data;
+		$this->load->view('index_page',$data);
+		$this->load->view('footer');
+	}
+
 	public function detail()
 	{
 		$this->load->view('header');
@@ -55,5 +65,19 @@ class Page_ctr extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-
+	public function booking_page()
+	{
+		if(!$this->session->userdata('akun'))
+		{
+			$this->load->view('header');
+			$this->load->view('login_page');
+			$this->load->view('footer');
+		}
+		else
+		{
+			$this->load->view('header');
+			$this->load->view('booking_page');
+			$this->load->view('footer');
+		}
+	}
 }

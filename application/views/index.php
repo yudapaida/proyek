@@ -108,7 +108,7 @@
 								<br>
 								<div class="cntr">
 								<h3>08.00 - 23.00 WIB</h3>
-								<a class="btn btn-success" href="<?php echo base_url();?>details_ctr" >Want to book ?</a> 
+								<a class="btn btn-success" href="<?php echo base_url();?>page_ctr/booking_page" >Want to book ?</a> 
 								<br>
 								<br>
 								<div class="fb-like" data-href="http://www.bootstrappage.com/" data-send="false" data-layout="button_count" data-width="80" data-show-faces="true"></div>

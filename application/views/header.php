@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">	
 <!-- styles -->
+	<link href="<?= base_url();?>assets/bootstrap/style.css" rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/shopping.css');?>" type="text/css" media="all" />
 	<link rel="stylesheet/less" type="text/css" href="<?php echo base_url('assets/themes/less/bootstrap.less');?>">

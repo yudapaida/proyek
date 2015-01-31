@@ -51,10 +51,10 @@
 			public function insert_operator()
 		{
 
-	
+			
 			$this->load->model('Crud_model','crud',TRUE);
-			$this->crud->operator_insert();
 			$this->do_upload();
+			$this->crud->operator_insert();
 			redirect(base_url());
 		}
 
