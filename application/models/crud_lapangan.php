@@ -24,7 +24,9 @@
 			//insert data member
 			$data['nama_lap']=$_POST['nama_lap'];
 			$data['deskripsi']=$_POST['deskripsi'];
-			$data['gambar']= $filename;
+			$data['pagi']=$_POST['pagi'];
+			$data['siang']=$_POST['siang'];
+			$data['malam']=$_POST['malam'];
 			$data['id_futsal']= $coba;
 
 			$result = $this->db->insert('lapangan', $data);

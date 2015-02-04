@@ -19,12 +19,26 @@
           <textarea class="form-control" rows="3" id="deskripsi" name="deskripsi" placeholder="Description"></textarea>
         </div>
       </div>
+      <h4>Tarif/Jam</h4>
       <div class="control-group">
-        <label class="control-label" for="gambar">Picture<sup>*</sup></label>
+        <label class="control-label" for="pagi">Pagi<sup>*</sup></label>
         <div class="controls">
-          <input type="file" name="userfile"/>
+          <input type="text" id="pagi" name="pagi" placeholder="Tarif Pagi">
         </div>
-      </div> 
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="siang">Siang<sup>*</sup></label>
+        <div class="controls">
+          <input type="text" id="siang" name="siang" placeholder="Tarif Siang">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="malam">Malam<sup>*</sup></label>
+        <div class="controls">
+          <input type="text" id="malam" name="malam" placeholder="Tarif Malam">
+        </div>
+      </div>
+
       <div class="control-group">
         <div class="controls">
           <input class="btn btn-large" type="submit" value="Submit"/>

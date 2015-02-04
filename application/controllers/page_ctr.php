@@ -40,7 +40,7 @@ class Page_ctr extends CI_Controller {
 	public function operator()
 	{
 		$this->load->view('header');
-		$this->load->view('operator_page');
+		$this->load->view('tambah_lapangan');
 		$this->load->view('footer');
 	}
 
@@ -79,5 +79,12 @@ class Page_ctr extends CI_Controller {
 			$this->load->view('booking_page');
 			$this->load->view('footer');
 		}
+	}
+
+	public function view_lap()
+	{
+		$this->load->view('header');
+		$this->load->view('view_lapangan');
+		$this->load->view('footer');
 	}
 }
