@@ -37,13 +37,6 @@ class Page_ctr extends CI_Controller {
 		$this->load->view('footer');
 	}
 
-	public function operator()
-	{
-		$this->load->view('header');
-		$this->load->view('tambah_lapangan');
-		$this->load->view('footer');
-	}
-
 	public function reg_opt()
 	{
 		$this->load->view('header');
@@ -81,10 +74,10 @@ class Page_ctr extends CI_Controller {
 		}
 	}
 
-	public function view_lap()
-	{
-		$this->load->view('header');
-		$this->load->view('view_lapangan');
-		$this->load->view('footer');
-	}
+	// public function view_lap()
+	// {
+	// 	$this->load->view('header');
+	// 	$this->load->view('view_lapangan');
+	// 	$this->load->view('footer');
+	// }
 }

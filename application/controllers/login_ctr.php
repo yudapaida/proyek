@@ -18,7 +18,7 @@ class Login_ctr extends CI_Controller {
 			redirect('page_ctr/admin');
 		}
 		if($data == "operator"){
-			redirect('page_ctr/operator');
+			redirect('lapangan_crud/view_lap');
 		}
 		if($data == "user"){
 			redirect('page_ctr/index_user');	

@@ -1,51 +1,45 @@
-    <div class="container" id="tourpackages-carousel">
+<!-- MENU UTAMA
+======================================================================================================================== -->
+
+<section id="mainBody">
+<div class="container">
+<h3 class="title"><span>Lapangan </span></h3>
+<ul>
+    <li><a href="<?php echo base_url('lapangan_crud/tambah_lap')?>"><button class="btn btn-info" >+Tambah Lapangan</button></a> </li>
+</ul>      
+        <!-- <p align="right"><a href="<?php echo site_url('rs_controler/tambah_data')?>" class="btn btn-primary">Tambah Data</a></p> -->
+
+  <table border="1" class="table table-bordered table-hover">
+        <thead>
+          <tr >
+            <th>Nama Lapagan </th>
+            <th>Deskripsi</th>
+            <th>Tarif Pagi</th>
+            <th>Tarif Siang</th>
+            <th>Tarif Malam</th>
+            <th >Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+      <?php 
+        foreach($data as $row){
+      ?>
+
+
+          <tr>
+            <td><?php echo $row['nama_lap'];?></td>
+            <td><?php echo $row['deskripsi'];?></td>
+            <td><?php echo $row['pagi'];?></td>
+            <td><?php echo $row['siang'];?></td>
+            <td><?php echo $row['malam'];?></td>
+            <td> <a href="<?php echo base_url('/lapangan_crud/lihat')?>?no=<?php echo $row['id_lap']; ?>"><button type="button" class="btn btn-info">Update</button></a>
+              <a href="<?php echo base_url('/lapangan_crud/hapus')?>?no=<?php echo $row['id_lap']; ?>"><button type="button" class="btn btn-danger">Hapus</button></a></td>
+            </tr>
+      <?php
+      } //print_r($mahasiswa);
       
-      <div class="row">
-        
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
-              <div class="caption">
-                <h4>Thumbnail label</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
-              <div class="caption">
-                <h4>Thumbnail label</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
-              <div class="caption">
-                <h4>Thumbnail label</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-18 col-sm-6 col-md-3">
-          <div class="thumbnail">
-            <img src="http://placehold.it/500x300" alt="">
-              <div class="caption">
-                <h4>Thumbnail label</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                <p><a href="#" class="btn btn-info btn-xs" role="button">Button</a> <a href="#" class="btn btn-default btn-xs" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-        
-      </div><!-- End row -->
-      
-    </div><!-- End container -->
+    ?>
+        </tbody>
+      </table>
+</div>
+</section>

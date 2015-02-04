@@ -31,5 +31,19 @@
 
 			$result = $this->db->insert('lapangan', $data);
 		}
+
+		public function view_lap()
+		{
+			$username = $this->session->userdata('akun');
+			$query = "SELECT lapangan.id_lap, lapangan.nama_lap, lapangan.deskripsi, lapangan.pagi, lapangan.siang, lapangan.malam FROM user, operator, lapangan WHERE lapangan.id_futsal=operator.id_futsal AND operator.id_user = user.id_user AND username='$username'";
+			$data = $this->db->query($query);
+			return $data->result_array();
+		}
+
+		public function delete_lap($id_lap)
+		{
+			$query = "DELETE FROM lapangan WHERE id_lap='$id_lap'";
+			$this->db->query($query);
+		}
 	}
 ?>
