@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/css/bootstrap.min.css');?>" type="text/css" media="all" />
+</head>
 <div class="container">
 <div class="bs-example" data-example-id="default-navbar">
     <nav class="navbar navbar-default">
