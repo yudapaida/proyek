@@ -26,49 +26,7 @@
 
 <!-- HEADER  -->
  <header class="header">
- 	<div class="container">
-	<div class="row">
-		<?php if($this->session->userdata('akun') ==""){ ?>
-		<div class="offset6 span6 right-align loginArea">
-			<a href="#login" role="button" data-toggle="modal"><span class="btn btn-mini"> Login  </span></a> 
-			<a href="<?php echo base_url();?>page_ctr/reg_opt"><span class="btn btn-mini"> Register  </span></a> 
-		</div>
-		<?php }else{ ?>
-		<div class="offset6 span6 right-align loginArea">
-            	Selamat Datang <b><?php echo $this->session->userdata('akun');?></b> | 
-            	<a href="<?php echo base_url();?>login_ctr/logout">Logout</a>
-		</div>
-		<?php } ?>
-	</div>
 	
-
-	<!-- Login Block -->
-	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h3>Please Login</h3>
-	  </div>
-	  <div class="modal-body">
-		<form class="form-horizontal loginFrm" action="<?php echo base_url();?>login_ctr/masuk" method="post">
-		  <div class="control-group">								
-			<input type="text" id="inputEmail" name="username" placeholder="Email">
-		  </div>
-		  <div class="control-group">
-			<input type="password" id="inputPassword" name="password" placeholder="Password">
-		  </div>
-		  <div class="control-group">
-			<label class="checkbox">
-			<input type="checkbox"> Remember me
-			</label>
-		  </div>		
-			<button type="submit" class="btn btn-success">Sign in</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-	  	</form>
-	  </div>
-	</div>
-	</div>
-
-
 	<!-- LOGO -->
 	<div class="navbar">
 	<div class="navbar-inner">
