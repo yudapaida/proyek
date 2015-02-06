@@ -11,9 +11,10 @@ class Jadwal_ctr extends CI_Controller
 
 		public function lihat_jadwal(){
 			$id_futsal = $_GET['id'];
-			$data['jadwal'] = $this->jadwal->lihat_jadwal($id_futsal);
-			print_r($data);
-			die();
+			$data=$this->jadwal->lihat_jadwal($id_futsal);
+			$data['jadwal'] = $data ;
+			// print_r($data);
+			// die();
 
 			$this->load->view('header');
 			$this->load->view('jadwal_page',$data);

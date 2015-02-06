@@ -4,7 +4,11 @@
 ======================================================================================================================== -->
 <section id="mainBody">
 <div class="container">
-	<h3 class="title"><span>Jadwal Lapangan</span></h3>
+	<?php 
+		foreach ($jadwal as $item) {
+	?>
+	
+	<h3 class="title"><span>Lapangan <?php echo $item['nama_lap'];?></span></h3>
 	<table class="table table-striped">
 		<thead>
 				<tr>
@@ -54,6 +58,8 @@
 
 		</tbody>
 	</table>
+	<?php } ?>
+
 </div>
 </section>
 
