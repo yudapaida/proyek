@@ -7,7 +7,7 @@
     }
 	
 	public function getOperator(){
-		$query = $this->db->query('select * from operator');
+		$query = $this->db->query('select * from operator WHERE status="confirmed"');
 		return $query->result_array();
 	}
 

@@ -62,6 +62,6 @@
 				where id_lap=$id_lap";
 		$result=$this->db->query($query);
 		return TRUE;
-	}
+		}
 	}
 ?>

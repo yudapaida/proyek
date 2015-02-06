@@ -15,7 +15,7 @@ class Login_ctr extends CI_Controller {
 
 		//direct ke halaman sesuai group usernya
 		if($data == "admin"){
-			redirect('page_ctr/admin');
+			redirect('admin_ctr/view_operator');
 		}
 		if($data == "operator"){
 			redirect('lapangan_crud/view_lap');
