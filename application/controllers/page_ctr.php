@@ -78,7 +78,7 @@ class Page_ctr extends CI_Controller {
 
 	public function login_page()
 	{
-		$this->load->view('header');
+		$this->load->view('header_login');
 		$this->load->view('login_page');
 		$this->load->view('footer');
 	}
