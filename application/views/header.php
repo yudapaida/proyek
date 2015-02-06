@@ -9,6 +9,7 @@
     <meta name="author" content="">	
 <!-- styles -->
 	<link href="<?= base_url();?>assets/bootstrap/style.css" rel='stylesheet' type='text/css' />
+	
     <link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/bootstrap.min.css');?>" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/shopping.css');?>" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/styleside.css');?>" type="text/css" media="all" />

@@ -45,5 +45,23 @@
 			$query = "DELETE FROM lapangan WHERE id_lap='$id_lap'";
 			$this->db->query($query);
 		}
+
+		public function get_lapangan($id_lap)
+		{
+			$query = "SELECT * FROM lapangan WHERE id_lap=$id_lap";
+			$data = $this->db->query($query);
+			return $data->result_array();
+		}
+
+		public function update_lap($id_lap,$nama_lap,$deskripsi,$pagi,$siang,$malam){
+		$query="UPDATE lapangan SET nama_lap='$nama_lap',
+									 deskripsi='$deskripsi',
+									 pagi='$pagi',
+									 siang='$siang',
+									 malam='$malam'
+				where id_lap=$id_lap";
+		$result=$this->db->query($query);
+		return TRUE;
+	}
 	}
 ?>

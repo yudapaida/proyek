@@ -62,9 +62,7 @@ class Page_ctr extends CI_Controller {
 	{
 		if(!$this->session->userdata('akun'))
 		{
-			$this->load->view('header');
-			$this->load->view('login_page');
-			$this->load->view('footer');
+			redirect('page_ctr/login_page');
 		}
 		else
 		{
@@ -78,10 +76,15 @@ class Page_ctr extends CI_Controller {
 		}
 	}
 
-	// public function view_lap()
-	// {
-	// 	$this->load->view('header');
-	// 	$this->load->view('view_lapangan');
-	// 	$this->load->view('footer');
-	// }
+	public function login_page()
+	{
+		$this->load->view('header');
+		$this->load->view('login_page');
+		$this->load->view('footer');
+	}
+	public function coba()
+	{
+		$this->load->view('header');
+		$this->load->view('menu_operator');
+	}
 }
