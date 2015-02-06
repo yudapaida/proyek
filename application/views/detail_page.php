@@ -1,7 +1,0 @@
-<?php
-
-
-echo "halaman detail !";
-
-
-?>

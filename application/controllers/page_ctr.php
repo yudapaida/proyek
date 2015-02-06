@@ -68,8 +68,12 @@ class Page_ctr extends CI_Controller {
 		}
 		else
 		{
+			$this->load->model('model_index');
+			$data = $this->model_index->getOperator();	
+			$data['data']=$data;
+		
 			$this->load->view('header');
-			$this->load->view('booking_page');
+			$this->load->view('booking_page',$data);
 			$this->load->view('footer');
 		}
 	}
