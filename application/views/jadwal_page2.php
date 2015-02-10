@@ -5,7 +5,6 @@
 <section id="mainBody">
 <div class="container">
 
-Dropdown Chain
 <script type="text/javascript" src="<?php echo base_url('assets/themes/js/jquery-1.8.3.min.js');?>"></script>
 <script type="text/javascript">
 //perhatikan, kuncinya adalah disini

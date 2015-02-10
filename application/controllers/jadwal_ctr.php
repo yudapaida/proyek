@@ -25,12 +25,18 @@ class Jadwal_ctr extends CI_Controller
 
 			$this->load->view('header');
 			$this->load->view('jadwal_page2',$data);
-			$this->load->view('footer');				
+			$this->load->view('footer');
 		}
 
 		public function pesan()
 		{
-			$this->jadwal->pesan();
+			$id_lap = $_GET['id_lap'];
+			$id_futsal = $_GET['id_futsal'];
+			// print_r($id_futsal);
+			// die();
+			$this->jadwal->pesan($id_lap,$id_futsal);
+			redirect('page_ctr/booking_page');
+
 		}
 
 		public function lihat_lap(){
@@ -68,9 +74,9 @@ class Jadwal_ctr extends CI_Controller
 				echo		'<tbody>';
 				echo				'<tr>';
 				echo					'<td>1</td>';
-				echo					'<td name="jam">07.00</td>';
+				echo					'<td><text name="jam">07.00</text></td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan"><button class="btn btn-success" action="#"> Booking </button></a></td>';
+				echo					'<td><a class="btn btn-success" href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'"> Booking </a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
