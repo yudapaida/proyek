@@ -27,7 +27,7 @@
               <?php
               if($row['status']=='confirmed') {
               ?>
-              <a href="<?php echo base_url('/admin_ctr/konfirmasi')?>?no=<?php echo $row['id_futsal']; ?>"><button type="button" disabled="disabled" class="btn btn-success">Confirm</button></a>
+              <button type="button" disabled="disabled" class="btn btn-success">Confirmed</button>
               <?php }
               else { ?>
               <a href="<?php echo base_url('/admin_ctr/konfirmasi')?>?no=<?php echo $row['id_futsal']; ?>"><button type="button" class="btn btn-success">Confirm</button></a>

@@ -19,6 +19,13 @@
 			$coba = $key->id;
 		}
 
+		//insert data user
+		$password =$_POST['password'];
+		$data_user['username']=$_POST['username'];
+		$data_user['password'] = md5($password);
+		$data_user['role'] = 'user';
+		$insert_user = $this->db->insert('user', $data_user);
+
 		//insert data member
 		$data['first_name']=$_POST['first_name'];
 		$data['last_name']=$_POST['last_name'];
@@ -31,12 +38,7 @@
 
 		$result = $this->db->insert('member', $data);
 		
-		//insert data user
-		$password =$_POST['password'];
-		$data_user['username']=$_POST['username'];
-		$data_user['password'] = md5($password);
-		$data_user['group'] = 'user';
-		$insert_user = $this->db->insert('user', $data_user);
+		
 		return $insert_user && $result;
 		}
 
@@ -48,6 +50,13 @@
 				$coba = $key->id;
 			}
 
+			//insert data user
+			$password =$_POST['password'];
+			$data_user['username']=$_POST['username'];
+			$data_user['password'] = md5($password);
+			$data_user['role'] = 'operator';
+			$insert_user = $this->db->insert('user', $data_user);
+
 			//insert data member
 			$data['nama_futsal']=$_POST['nama_futsal'];
 			$data['alamat']=$_POST['alamat'];
@@ -57,12 +66,8 @@
 
 			$result = $this->db->insert('operator', $data);
 		
-			//insert data user
-			$password =$_POST['password'];
-			$data_user['username']=$_POST['username'];
-			$data_user['password'] = md5($password);
-			$data_user['group'] = 'operator';
-			$insert_user = $this->db->insert('user', $data_user);
+			
+			
 			return $insert_user && $result;	
 		}
 	}

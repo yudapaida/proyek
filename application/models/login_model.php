@@ -26,7 +26,7 @@
 			
 			//return group users
 			foreach ($hasil->result_array() as $data) {
-				$group = $data['group'];		
+				$group = $data['role'];		
 			}
 			return $group;
 
