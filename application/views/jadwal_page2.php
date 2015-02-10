@@ -8,24 +8,24 @@
 Dropdown Chain
 <script type="text/javascript" src="<?php echo base_url('assets/themes/js/jquery-1.8.3.min.js');?>"></script>
 <script type="text/javascript">
-// //perhatikan, kuncinya adalah disini
-//         function fungsiambilkab(nilai){
-//            $.ajax({
-//                 type: "POST",
-//                 url: "<?php echo site_url('jadwal_ctr/lihat_jadwal');?>",
-//                 data:"key="+nilai,
-//                 success: function(data){
-//                     $("#kab").html(data);
-//                 },
+//perhatikan, kuncinya adalah disini
+        function fungsiambilkab(nilai){
+           $.ajax({
+                type: "POST",
+                url: "<?php echo site_url('jadwal_ctr/lihat_lap');?>",
+                data:"key="+nilai,
+                success: function(data){
+                    $("#kab").html(data);
+                },
  
-//                 error:function(XMLHttpRequest){
-//                     alert(XMLHttpRequest.responseText);
-//                 }
+                error:function(XMLHttpRequest){
+                    alert(XMLHttpRequest.responseText);
+                }
  
-//             })
+            })
  
-//         };
-// </script>
+        };
+</script>
  
 <?php
     echo form_open('#');
@@ -35,7 +35,7 @@ Dropdown Chain
  ?>
 </pre>
 <div id="kab"></div>
-<pre>
+
 
 </div>
 </section>
