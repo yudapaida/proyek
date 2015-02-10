@@ -13,6 +13,19 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/shopping.css');?>" type="text/css" media="all" />
 	<link rel="stylesheet" href="<?php echo base_url('assets/bootstrap/css/styleside.css');?>" type="text/css" media="all" />
 	<link rel="stylesheet/less" type="text/css" href="<?php echo base_url('assets/themes/less/bootstrap.less');?>">
+	<style type="text/css">
+		.coba img {
+			height: 450px;
+			width: 50px;
+		}
+
+		.gambar-user img {
+			height: 250px;
+			width: 300px;
+		}
+
+
+	</style>
 	
 	<script type="text/javascript" src="<?php echo base_url();?>assets/themes/js/swfobject/swfobject.js"></script>
 	<script src="<?php echo base_url('assets/themes/js/less/less.js');?>" type="text/javascript"></script>

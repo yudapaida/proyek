@@ -18,7 +18,7 @@
 		  		?>
 		  		<div class="<?php if ($i==0)echo 'item active'; else echo 'item'; $i++;?>">
 				<div class="row">
-					<div class="span6">
+					<div class="span6 coba">
 						<img src="<?php $logo=$item['gambar'];
 										$url = "assets/themes/images/carousel/".$logo;
 										echo base_url($url);?>" alt="#" />

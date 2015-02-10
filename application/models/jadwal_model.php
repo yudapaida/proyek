@@ -21,6 +21,11 @@ class Jadwal_model extends CI_Model
 		return $data->result_array();
 	}
 
+	public function pesan()
+	{
+		
+	}
+
 }
 
 ?>

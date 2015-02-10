@@ -28,6 +28,11 @@ class Jadwal_ctr extends CI_Controller
 			$this->load->view('footer');				
 		}
 
+		public function pesan()
+		{
+			$this->jadwal->pesan();
+		}
+
 		public function lihat_lap(){
 			$key = $this->input->post('key');
 			// $key=1;
@@ -63,37 +68,37 @@ class Jadwal_ctr extends CI_Controller
 				echo		'<tbody>';
 				echo				'<tr>';
 				echo					'<td>1</td>';
-				echo					'<td>07.00</td>';
+				echo					'<td name="jam">07.00</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
+				echo					'<td><a href="pesan"><button class="btn btn-success" action="#"> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
-				echo					'<td>08.00</td>';
+				echo					'<td name="jam">08.00</td>';
 				echo					'<td>Booked by Komsi</td>';
 				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>3</td>';
-				echo					'<td>09.00</td>';
+				echo					'<td name="jam">09.00</td>';
 				echo					'<td>Booked by Komsi</td>';
 				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>4</td>';
-				echo					'<td>10.00</td>';
+				echo					'<td name="jam">10.00</td>';
 				echo					'<td>Booked by Komsi</td>';
 				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>5</td>';
-				echo					'<td>11.00</td>';
+				echo					'<td name="jam">11.00</td>';
 				echo					'<td>Booked by Komsi</td>';
 				echo					'<td><button class="btn btn-success" action="#" disabled> Booking </button></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>1</td>';
-				echo					'<td>12.00</td>';
+				echo					'<td name="jam">12.00</td>';
 				echo					'<td>Booked by Komsi</td>';
 				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
 				echo				'</tr>';
@@ -101,13 +106,8 @@ class Jadwal_ctr extends CI_Controller
 				echo	'</table>';
 				echo '</p>';
 			}
-
 			// print_r($data['nama_lap']);
-			// die();
-
-					
+			// die();			
 		}
-
 	}
-
 ?>
