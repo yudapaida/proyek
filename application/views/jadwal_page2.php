@@ -24,11 +24,24 @@
                 error:function(XMLHttpRequest){
                     alert(XMLHttpRequest.responseText);
                 }
- 
             })
- 
         };         
 </script> 
+// <script type="text/javascript">
+//     function dataTransaksi(nilai){
+//         $.ajax({
+//             type: "POST",
+//             url: "<?php echo site_url('jadwal_ctr/lihat_lap');?>",
+//             data : "tgl="+nilai,
+//             success: function(data){
+//                 $('#kab').html(data);
+//             },
+//             error:function(XMLHttpRequest){
+//                 alert(XMLHttpRequest.responseText);
+//             }
+//         })
+//     }
+// </script>
 <script type="text/javascript">
     $(function(){
             $("#tglbooking").datepicker({
@@ -40,32 +53,21 @@
         });
 
 </script>  
-<p>
+    
+<form action="#">
     <?php
-    echo form_open('#');
     $js = 'onChange="fungsiambilkab(this.value);"';
     echo form_dropdown('provinsi', $lapangan,'', $js);
-    
-    echo form_close();
- ?>
-</p>
-
-<p>
-<?php
-echo form_open('#');
     $data = array(
         'id' => 'tglbooking',
-        'type' => 'text',
-        'name' =>'tgl_booking',
+        'name' => 'tgl_booking',
         'placeholder' => 'Pilih Tanggal'
         );
     echo form_input($data);
-    echo form_close();
-?>
-</p>
-
+    ?>
+ </form>
 </pre>
-<div id="kab"></div>
+<div id="kab"> </div>
 
 
 </div>

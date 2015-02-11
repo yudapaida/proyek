@@ -21,7 +21,14 @@ class Jadwal_model extends CI_Model
 		return $data->result_array();
 	}
 
-	public function pesan($id_lap,$id_futsal)
+	public function dataTransaksi($tgl)
+	{
+		$query = "SELECT * FROM transaksi WHERE tgl_booking='$tgl";
+		$data = $this->db->query($query);
+		return $data->result_array();
+	}
+
+	public function pesan($id_lap,$id_futsal,$jam)
 	{
 		
 		$username = $this->session->userdata('akun');
@@ -41,7 +48,7 @@ class Jadwal_model extends CI_Model
 		$data['id_futsal'] = $id_futsal;
 		$data['id_lapangan'] = $id_lap;
 		$data['id_member'] = $idmember;
-		$data['jam'] =$_POST['jam'];
+		$data['jam'] =$jam;
 		$data['nama_team'] = $team;
 
 		$result = $this->db->insert('transaksi',$data);
