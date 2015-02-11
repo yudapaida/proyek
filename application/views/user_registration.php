@@ -2,6 +2,21 @@
 
 <!-- MENU UTAMA
 ======================================================================================================================== -->
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/bootstrap/js/development-bundle/themes/ui-lightness/ui.all.css');?>" />
+    <script src="<?php echo base_url('assets/bootstrap/js/development-bundle/jquery-1.8.0.min.js');?>"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/development-bundle/ui/ui.core.js');?>"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/development-bundle/ui/ui.datepicker.js');?>"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/development-bundle/ui/i18n/ui.datepicker-id.js');?>"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#tanggal").datepicker({
+                dateFormat : "yy-mm-dd",
+                changeMonth : true,
+                changeYear : true,
+                yearRange : '-66:+60'
+            });
+        });
+    </script>
 <section id="mainBody">
 <div class="container">
 <h3 class="title"><span>Registration</span></h3>
@@ -44,7 +59,7 @@
       <div class="control-group">
         <label class="control-label">Date of Birth <sup>*</sup></label>
         <div class="controls">
-          <input type="text" id="ttl" name="ttl" placeholder="yyyy-mm-dd">
+          <input type="text" id="tanggal" name="ttl" placeholder="yyyy-mm-dd">
         </div>
       </div>
       <div class="control-group">

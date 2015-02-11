@@ -77,5 +77,6 @@ class Page_ctr extends CI_Controller {
 	{
 		$this->load->view('header');
 		$this->load->view('datepicker');
+		$this->load->view('footer');
 	}
 }
