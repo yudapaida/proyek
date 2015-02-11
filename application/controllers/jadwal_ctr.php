@@ -24,6 +24,7 @@ class Jadwal_ctr extends CI_Controller
 			// die();
 
 			$this->load->view('header');
+			//$this->load->view('datepicker');
 			$this->load->view('jadwal_page2',$data);
 			$this->load->view('footer');
 		}

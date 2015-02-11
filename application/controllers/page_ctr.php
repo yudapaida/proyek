@@ -76,6 +76,6 @@ class Page_ctr extends CI_Controller {
 	public function coba()
 	{
 		$this->load->view('header');
-		$this->load->view('menu_operator');
+		$this->load->view('datepicker');
 	}
 }
