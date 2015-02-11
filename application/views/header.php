@@ -32,6 +32,7 @@
 	<script src="<?php echo base_url('assets/themes/js/less/less.js');?>" type="text/javascript"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/themes/js/swfobject/jquery.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/themes/js/swfobject/flexpaper.js');?>"></script>
+    <script src="<?php echo base_url('assets/bootstrap/js/development-bundle/jquery-1.8.0.min.js');?>"></script>
   </head>
 
 <body>
