@@ -27,20 +27,31 @@
  
             })
  
-        };
-
-         $(function(){
+        };         
+</script> 
+<script type="text/javascript">
+    $(function(){
             $("#tglbooking").datepicker({
                 dateFormat : "yy-mm-dd",
                 changeMonth : true,
                 changeYear : true
             });
         });
-</script>   
-<?php
+
+</script>  
+<p>
+    <?php
     echo form_open('#');
     $js = 'onChange="fungsiambilkab(this.value);"';
     echo form_dropdown('provinsi', $lapangan,'', $js);
+    
+    echo form_close();
+ ?>
+</p>
+
+<p>
+<?php
+echo form_open('#');
     $data = array(
         'id' => 'tglbooking',
         'type' => 'text',
@@ -49,7 +60,9 @@
         );
     echo form_input($data);
     echo form_close();
- ?>
+?>
+</p>
+
 </pre>
 <div id="kab"></div>
 
