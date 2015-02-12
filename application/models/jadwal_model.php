@@ -21,11 +21,16 @@ class Jadwal_model extends CI_Model
 		return $data->result_array();
 	}
 
-	public function dataTransaksi($tgl)
+	public function dataTransaksi($id_lap,$tgl_booking)
 	{
-		$query = "SELECT * FROM transaksi WHERE tgl_booking='$tgl";
+		$query = "SELECT jam,status,nama_team FROM transaksi WHERE id_lapangan='$id_lap' AND tgl_booking='$tgl_booking'";
 		$data = $this->db->query($query);
-		return $data->result_array();
+		
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			// do nothing
+		}
 	}
 
 	public function pesan($id_lap,$id_futsal,$jam)
