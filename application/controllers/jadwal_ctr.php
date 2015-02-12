@@ -42,8 +42,14 @@ class Jadwal_ctr extends CI_Controller
 		}
 
 		public function lihat_lap(){
-			$key = $this->input->post('key');
-			$data=$this->jadwal->dataLapangan($key);
+			// Ambil post dari ajax jadwal_page2
+			$tgl = $this->input->post('tgl');
+			$id_lap = $this->input->post('id');
+
+			//load model untuk ambil data lapangan
+			$data=$this->jadwal->dataLapangan($id_lap);
+
+			
 			// $tgl = $this->input->post('tgl');
 			// $data_tgl = $this->jadwal->dataTransaksi($tgl);
 			foreach ($data as $item) {
