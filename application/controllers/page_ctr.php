@@ -75,14 +75,9 @@ class Page_ctr extends CI_Controller {
 	}
 	public function coba()
 	{
-		$this->load->view('header');
+		//$this->load->view('header');
 		$this->load->view('datepicker');
-		$this->load->view('footer');
+		//$this->load->view('footer');
 	}
-	public function transaksi(){
-		$this->load->view('header');
-		$this->load->view('transaksi_page');
-		$this->load->view('footer');
-			
-	}
+	
 }

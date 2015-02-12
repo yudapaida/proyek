@@ -1,66 +1,42 @@
-<!DOCTYPE html>
-
-<!-- MENU UTAMA
-======================================================================================================================== -->
 <section id="mainBody">
 <div class="container">
-<h3 class="title"><span>Konfirmasi Pembayaran</span></h3>
-	<div class="well">
-    <form class="form-horizontal" action="#" method="POST" enctype="multipart/form-data">
-      <div class="control-group">
-        <label class="control-label" for="nama_user">Nama</label>
-        <div class="controls">
-          <input type="text" id="nama_user" name="nama_user" value="Yuda Hermawan" disabled>
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="lokasi_futsal">Lokasi Futsal</label>
-        <div class="controls">
-          <input type="text" id="lokasi" name="lokasi" placeholder="Lokasi Futsal">
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="lapangan">Nama Lapangan </label>
-        <div class="controls">
-          <input type="text" id="lapangan" name="lapangan" placeholder="Nama Lapangan">
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="jam_mulai">Jam Mulai</label>
-        <div class="controls">
-          <input type="text" id="jam_mulai" name="jam_mulai" placeholder="Jam Mulai">
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="jam_selesai">Jam Selesai</label>
-        <div class="controls">
-          <input type="text" id="jam_selesai" name="jam_selesai" placeholder="Jam Selesai">
-        </div>
-      </div>
-      <div class="control-group">
-        <label class="control-label" for="harga">Total Harga</label>
-        <div class="controls">
-          <input type="text" id="harga" name="harga" placeholder="Harga">
-        </div>
-      </div>
+<h3 class="title"><span>Daftar Transaksi</span></h3>
+<ul>
+    <li><a href="<?php echo base_url('page_ctr/booking_page')?>"><button class="btn btn-info" >Booking Lapangan</button></a> </li>
+</ul>      
+        <!-- <p align="right"><a href="<?php echo site_url('rs_controler/tambah_data')?>" class="btn btn-primary">Tambah Data</a></p> -->
+
+  <table border="1" class="table table-bordered table-hover">
+        <thead>
+          <tr >
+            <th>Nama</th>
+            <th>Lokasi Futsal</th>
+            <th>Lapangan</th>
+            <th>Jam</th>
+            <th>Harga</th>
+            <th>Konfirmasi</th>
+          </tr>
+        </thead>
+        <tbody>
+      <?php 
+        foreach($data as $row){
+      ?>
+
+
+          <tr>
+            <td><?php echo $row['first'];?> <?php echo $row['last'];?></td>
+            <td><?php echo $row['futsal'];?></td>
+            <td><?php echo $row['lapangan'];?></td>
+            <td><?php echo $row['jam'];?></td>
+            <td><?php echo $row['harga'];?></td>
+            <td> <a href="<?php echo base_url('/transaksi_ctr/konfirmasi')?>?no=<?php echo $row['id_transaksi']; ?>"><button type="button" class="btn btn-info">Konfirmasi</button></a>
+            </td>
+            </tr>
+      <?php
+      } //print_r($mahasiswa);
       
-      <div class="control-group">
-        <label class="control-label" for="gambar">Bukti Pembayaran <sup>*</sup></label>
-        <div class="controls">
-          <input type="file" name="userfile"/>
-        </div>
-      </div> 
-      <div class="control-group">
-        <div class="controls">
-          <input class="btn btn-large" type="submit" value="Konfirmasi Pembayaran"/>
-        </div>
-      </div>
-           
-      <p class="pull-right badge badge-important">[ * ] Upload/Sertakan gambar bukti pembayaran  </p>
-      <br>
-
-    </form> 
-  </div>
-
+    ?>
+        </tbody>
+      </table>
 </div>
 </section>

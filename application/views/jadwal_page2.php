@@ -27,21 +27,6 @@
             })
         };         
 </script> 
-// <script type="text/javascript">
-//     function dataTransaksi(nilai){
-//         $.ajax({
-//             type: "POST",
-//             url: "<?php echo site_url('jadwal_ctr/lihat_lap');?>",
-//             data : "tgl="+nilai,
-//             success: function(data){
-//                 $('#kab').html(data);
-//             },
-//             error:function(XMLHttpRequest){
-//                 alert(XMLHttpRequest.responseText);
-//             }
-//         })
-//     }
-// </script>
 <script type="text/javascript">
     $(function(){
             $("#tglbooking").datepicker({
@@ -53,7 +38,6 @@
         });
 
 </script>  
-    
 <form action="#">
     <?php
     $js = 'onChange="fungsiambilkab(this.value);"';

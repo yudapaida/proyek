@@ -38,17 +38,28 @@ class Jadwal_model extends CI_Model
 			$idmember = $key->id_member;
 			$team = $key->team_name;
 		}
+		$jamint = intval($jam);
+		if ($jamint >= 7) {
+			$harga = 'pagi';
+			if ($jamint >= 12) {
+			$harga >= 'siang';
+		}
+		else {
+			$harga = 'malam';
+		}	
+		}
+		
+		print_r($harga);
+		die();
 
-		// $queryfutsal = "SELECT id_futsal FROM lapangan WHERE id_lap=$id_lap";
-		// $futsal = $this->db->query($queryfutsal);
-		// foreach ($futsal->result() as $key) {
-		// 	$idfutsal = $key->id_futsal;
-		// }
+		$queryharga = "SELECT $harga FROM lapangan";
+		$harga = $this->db->query($queryharga);
 
 		$data['id_futsal'] = $id_futsal;
 		$data['id_lapangan'] = $id_lap;
 		$data['id_member'] = $idmember;
 		$data['jam'] =$jam;
+		$data['harga'] = $harga;
 		$data['nama_team'] = $team;
 
 		$result = $this->db->insert('transaksi',$data);

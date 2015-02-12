@@ -79,7 +79,7 @@ class Jadwal_ctr extends CI_Controller
 				echo					'<td>1</td>';
 				echo					'<td>07.00</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a class="btn btn-success" href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00"> Booking </a></td>';
+				echo					'<td><a class="btn btn-success" href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=7 AM"> Booking </a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
