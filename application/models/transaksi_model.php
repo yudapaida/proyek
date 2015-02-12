@@ -23,5 +23,19 @@
 			$data = $this->db->query($query);
 			return $data->result_array();
 		}
+
+		public function insert_konfirmasi($filename)
+		{
+
+			$data['nama_member'] = $_POST['nama_user'];
+			$data['lokasi'] = $_POST['lokasi'];
+			$data['lapangan'] = $_POST['lapangan'];
+			$data['jam'] = $_POST['jam_mulai'];
+			$data['harga'] = $_POST['harga'];
+			$data['gambar'] = $filename;
+			$data['id_transaksi'] = $_POST['id_transaksi'];
+
+			$result = $this->db->insert('konfirmasi',$data);
+		}
 	}
 ?>

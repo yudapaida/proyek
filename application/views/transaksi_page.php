@@ -1,5 +1,9 @@
 <section id="mainBody">
 <div class="container">
+  <ul class="nav nav-pills">
+    <li role="presentation"><a href="<?php echo base_url('page_ctr/booking_page')?>">Booking</a></li>
+    <li role="presentation" class="active"><a href="#">Transaksi</a></li>
+  </ul>
 <h3 class="title"><span>Daftar Transaksi</span></h3>
 <ul>
     <li><a href="<?php echo base_url('page_ctr/booking_page')?>"><button class="btn btn-info" >Booking Lapangan</button></a> </li>

@@ -9,35 +9,36 @@
         foreach($data as $row){
       ?>
 	<div class="well">
-    <form class="form-horizontal" action="#" method="POST" enctype="multipart/form-data">
+    <form class="form-horizontal" action="<?= base_url();?>transaksi_ctr/insert_konfirmasi" method="POST" enctype="multipart/form-data">
+      <input type="hidden" id="id_transaksi" name="id_transaksi" value="<?php echo $row['id_transaksi'];?>" visibility="hidden">
       <div class="control-group">
         <label class="control-label" for="nama_user">Nama</label>
         <div class="controls">
-          <input type="text" id="nama_user" name="nama_user" value="<?php echo $row['first'];?> <?php echo $row['last'];?>" disabled>
+          <input type="text" id="nama_user" name="nama_user" value="<?php echo $row['first'];?> <?php echo $row['last'];?>" readonly>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="lokasi_futsal">Lokasi Futsal</label>
         <div class="controls">
-          <input type="text" id="lokasi" name="lokasi" value="<?php echo $row['futsal'];?>" disabled>
+          <input type="text" id="lokasi" name="lokasi" value="<?php echo $row['futsal'];?>" readonly>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="lapangan">Nama Lapangan </label>
         <div class="controls">
-          <input type="text" id="lapangan" name="lapangan" value="<?php echo $row['lapangan'];?>" disabled>
+          <input type="text" id="lapangan" name="lapangan" value="<?php echo $row['lapangan'];?>" readonly>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="jam_mulai">Jam Mulai</label>
         <div class="controls">
-          <input type="text" id="jam_mulai" name="jam_mulai" value="<?php echo $row['jam'];?>" disabled>
+          <input type="text" id="jam_mulai" name="jam_mulai" value="<?php echo $row['jam'];?>" readonly>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="harga">Biaya</label>
         <div class="controls">
-          <input type="text" id="harga" name="harga" value="<?php echo $row['harga'];?>" disabled>
+          <input type="text" id="harga" name="harga" value="<?php echo $row['harga'];?>" readonly>
         </div>
       </div>
       <?php } ?>

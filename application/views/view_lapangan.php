@@ -3,6 +3,11 @@
 
 <section id="mainBody">
 <div class="container">
+  <ul class="nav nav-pills">
+  <li role="presentation"><a href="#">Jadwal</a></li>
+  <li role="presentation" class="active"><a href="#">Lapangan</a></li>
+  <li role="presentation"><a href="<?php echo base_url('operator_ctr/view_konfirmasi')?>">Transaksi</a></li>
+</ul>
 <h3 class="title"><span>Lapangan </span></h3>
 <ul>
     <li><a href="<?php echo base_url('lapangan_crud/tambah_lap')?>"><button class="btn btn-info" >+Tambah Lapangan</button></a> </li>
