@@ -29,7 +29,7 @@ class Jadwal_model extends CI_Model
 		if($data->num_rows() > 0){
 			return $data->result_array();
 		}else{
-			// do nothing
+			return FALSE;
 		}
 	}
 

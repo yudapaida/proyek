@@ -45,24 +45,32 @@ class Jadwal_ctr extends CI_Controller
 			// Ambil post dari ajax jadwal_page2
 			$tgl = $this->input->post('tgl');
 			$id_lap = $this->input->post('id');
-
+			$waktu=array("07.00","08.00","09.00","10.00","11.00","12.00","13.00","14.00","15.00","16.00","17.00","18.00","19.00","20.00","21.00","22.00");
+			$button='';
+			
 			// load model untuk cek jam di tabel transaksi
 			// ada atau tidak 
 			$tgl_booking = $this->jadwal->dataTransaksi($id_lap,$tgl);
-			foreach ($tgl_booking as $item) {
-				$jam=$item['jam'];
-				$status=$item['status'];
-				$nama_team=$item['nama_team'];
-			}
-
-			// untuk disabled button jika 
-			// jamnya ada di tabel transaksi sesuai id lapangan dan tgl
-			$waktu=array("07.00","08.00","09.00","10.00","11.00","12.00","13.00","14.00","15.00","16.00","17.00","18.00","19.00","20.00","21.00","22.00");
-			for ($i=0; $i <16; $i++) { 
-				if($waktu[$i]==$jam){
-					$button="disabled";
+			if($tgl_booking==FALSE){
+				//do nothing
+			}else{
+				foreach ($tgl_booking as $item) {
+					$jam=$item['jam'];
+					$status=$item['status'];
+					$nama_team=$item['nama_team'];
+				}
+				// untuk disabled button jika 
+				// jamnya ada di tabel transaksi sesuai id lapangan dan tgl
+				
+				for ($i=0; $i <16; $i++) { 
+					if($waktu[$i]==$jam){
+						$button='disabled="disabled"';
+					}else{
+						// do nothing
+					}
 				}
 			}
+			
 
 			// load model untuk ambil data lapangan
 			$data=$this->jadwal->dataLapangan($id_lap);
@@ -103,7 +111,7 @@ class Jadwal_ctr extends CI_Controller
 				echo					'<td>1</td>';
 				echo					'<td>'.$waktu[0].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a class="btn btn-success" href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00" '.$button.	'> Booking </a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
