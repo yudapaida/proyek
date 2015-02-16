@@ -12,11 +12,17 @@
 
 <script type="text/javascript">
 //perhatikan, kuncinya adalah disini
-        function fungsiambilkab(nilai){
+        function fungsiambilkab(){
+            var tgl=$("#tglbooking").datepicker({ dateFormat: 'yy-mm-dd' }).val();
+            var id_lap=$("#nama_lap option:selected").val();
+
+            // alert(data);
            $.ajax({
                 type: "POST",
                 url: "<?php echo site_url('jadwal_ctr/lihat_lap');?>",
-                data:"key="+nilai,
+                data:{tgl:tgl,
+                      id:id_lap},
+                datatype:'json',
                 success: function(data){
                     $("#kab").html(data);
                 },
@@ -37,18 +43,23 @@
             });
         });
 
-</script>  
+</script>
+
 <form action="#">
     <?php
-    $js = 'onChange="fungsiambilkab(this.value);"';
-    echo form_dropdown('provinsi', $lapangan,'', $js);
     $data = array(
         'id' => 'tglbooking',
         'name' => 'tgl_booking',
         'placeholder' => 'Pilih Tanggal'
         );
+
     echo form_input($data);
+    echo " ";
+    // $js = 'onChange="fungsiambilkab(this.value);"';
+    $js = 'id="nama_lap" onChange=""';
+    echo form_dropdown('nama_lap', $lapangan,'',$js);
     ?>
+    <input type="button" value="tombol" onclick="fungsiambilkab();" />
  </form>
 </pre>
 <div id="kab"> </div>

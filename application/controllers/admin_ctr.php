@@ -24,7 +24,7 @@
 			redirect('admin_ctr/view_operator');
 		}
 
-		public function hapus()
+			public function hapus()
 		{
 			$id_futsal=$_GET['no'];
 			$this->admin_model->delete_operator($id_futsal);

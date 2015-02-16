@@ -34,16 +34,49 @@ class Jadwal_ctr extends CI_Controller
 			$id_lap = $_GET['id_lap'];
 			$id_futsal = $_GET['id_futsal'];
 			$jam = $_GET['jam'];
+			$tgl= $_GET['tgl'];
 			// print_r($id_futsal);
 			// die();
-			$this->jadwal->pesan($id_lap,$id_futsal,$jam);
+			$this->jadwal->pesan($id_lap,$id_futsal,$jam,$tgl);
 			redirect('page_ctr/booking_page');
 
 		}
 
 		public function lihat_lap(){
-			$key = $this->input->post('key');
-			$data=$this->jadwal->dataLapangan($key);
+			// Ambil post dari ajax jadwal_page2
+			$tgl = $this->input->post('tgl');
+			$id_lap = $this->input->post('id');
+			$waktu=array("07.00","08.00","09.00","10.00","11.00","12.00","13.00","14.00","15.00","16.00","17.00","18.00","19.00","20.00","21.00","22.00");
+			$button='';
+			
+			// load model untuk cek jam di tabel transaksi
+			// ada atau tidak 
+			$transaksi = $this->jadwal->dataTransaksi($id_lap,$tgl);
+			
+			// print_r($tgl_booking[0]['jam']);
+			// print_r($tgl_booking[1]['jam']);
+			// die();
+
+
+			if($transaksi==FALSE){
+				//do nothing
+			}else{
+				for ($i=0; $i <count($transaksi) ; $i++) { 
+					for ($j=0; $j <16 ; $j++) { 
+						if($transaksi[$i]['jam']==$waktu[$j]){
+							$button='disabled="disabled"';
+						}else{
+							//do nothing
+						}	
+					}
+				}
+			}
+			
+
+			// load model untuk ambil data lapangan
+			$data=$this->jadwal->dataLapangan($id_lap);
+
+			
 			// $tgl = $this->input->post('tgl');
 			// $data_tgl = $this->jadwal->dataTransaksi($tgl);
 			foreach ($data as $item) {
@@ -77,15 +110,15 @@ class Jadwal_ctr extends CI_Controller
 				echo		'<tbody>';
 				echo				'<tr>';
 				echo					'<td>1</td>';
-				echo					'<td>07.00</td>';
+				echo					'<td>'.$waktu[0].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a class="btn btn-success" href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=7 AM"> Booking </a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
 				echo					'<td name="jam">08.00</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=08.00"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>3</td>';
@@ -110,6 +143,7 @@ class Jadwal_ctr extends CI_Controller
 				echo					'<td name="jam">12.00</td>';
 				echo					'<td>Booked by Komsi</td>';
 				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
+				// echo 						$button;
 				echo				'</tr>';
 				echo		'</tbody>';
 				echo	'</table>';
