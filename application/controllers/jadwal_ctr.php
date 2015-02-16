@@ -34,9 +34,10 @@ class Jadwal_ctr extends CI_Controller
 			$id_lap = $_GET['id_lap'];
 			$id_futsal = $_GET['id_futsal'];
 			$jam = $_GET['jam'];
+			$tgl= $_GET['tgl'];
 			// print_r($id_futsal);
 			// die();
-			$this->jadwal->pesan($id_lap,$id_futsal,$jam);
+			$this->jadwal->pesan($id_lap,$id_futsal,$jam,$tgl);
 			redirect('page_ctr/booking_page');
 
 		}
@@ -111,13 +112,13 @@ class Jadwal_ctr extends CI_Controller
 				echo					'<td>1</td>';
 				echo					'<td>'.$waktu[0].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
 				echo					'<td name="jam">08.00</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=08.00"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>3</td>';

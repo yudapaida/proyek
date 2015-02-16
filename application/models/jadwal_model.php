@@ -33,7 +33,7 @@ class Jadwal_model extends CI_Model
 		}
 	}
 
-	public function pesan($id_lap,$id_futsal,$jam)
+	public function pesan($id_lap,$id_futsal,$jam,$tgl)
 	{
 		
 		$username = $this->session->userdata('akun');
@@ -44,28 +44,33 @@ class Jadwal_model extends CI_Model
 			$team = $key->team_name;
 		}
 		$jamint = intval($jam);
-		if ($jamint >= 7) {
+
+		if ($jamint <=12) {
 			$harga = 'pagi';
-			if ($jamint >= 12) {
-			$harga >= 'siang';
+		}
+		elseif($jamint <=18) {
+			$harga = 'siang';
 		}
 		else {
 			$harga = 'malam';
 		}	
-		}
-		
-		print_r($harga);
-		die();
 
-		$queryharga = "SELECT $harga FROM lapangan";
-		$harga = $this->db->query($queryharga);
+		// print_r($harga);
+		// die();
+
+
+		$queryharga = "SELECT lapangan.$harga FROM lapangan WHERE id_lap='$id_lap'";
+		$harga_lap = $this->db->query($queryharga)->result_array();
+		// print_r($harga_lap[0][$harga]);
+		// die();
 
 		$data['id_futsal'] = $id_futsal;
 		$data['id_lapangan'] = $id_lap;
 		$data['id_member'] = $idmember;
 		$data['jam'] =$jam;
-		$data['harga'] = $harga;
+		$data['harga'] = $harga_lap[0][$harga];
 		$data['nama_team'] = $team;
+		$data['tgl_booking'] = $tgl;
 
 		$result = $this->db->insert('transaksi',$data);
 
