@@ -37,13 +37,11 @@
                               $logo=$row['gambar'];
                               $url = "assets/themes/images/konfirmasi/".$logo;   
                               echo base_url($url);?>" height="50px" width="100px"></td>
-            <?php if($row['status']=='booked') {
-            ?>
+            <?php if($row['status']=='booked'): ?>
             <td> <button type="button" class="btn btn-success" disabled="disabled">Confirmed</button></td>
-            <?php }
-            else { ?>
+            <?php else : ?>
             <td> <a href="<?php echo base_url('/operator_ctr/konfirmasi_status')?>?no=<?php echo $row['id_transaksi']; ?>"><button type="button" class="btn btn-info">Confirm</button></a></td>
-            <?php } ?>
+            <?php endif; ?>
             </tr>
       <?php
       }

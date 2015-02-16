@@ -4,6 +4,11 @@
 ======================================================================================================================== -->
 <section id="mainBody">
 <div class="container">
+	<ul class="nav nav-pills">
+    	<li role="presentation"><a href="<?php echo base_url('page_ctr/index_user')?>">Home</a></li>
+    	<li role="presentation" class="active"><a href="#">Booking</a></li>
+    	<li role="presentation"><a href="<?php echo base_url('transaksi_ctr/view_transaksi')?>">Transaksi</a></li>
+  	</ul>
 <h3 class="title"><span>Pesan Futsal </span></h3>
 	<div class="row">
 		<?php 

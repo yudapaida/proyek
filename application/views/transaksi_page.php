@@ -33,8 +33,12 @@
             <td><?php echo $row['lapangan'];?></td>
             <td><?php echo $row['jam'];?></td>
             <td><?php echo $row['harga'];?></td>
+            <?php if($row['status'] != "booked"):?>
             <td> <a href="<?php echo base_url('/transaksi_ctr/konfirmasi')?>?no=<?php echo $row['id_transaksi']; ?>"><button type="button" class="btn btn-info">Konfirmasi</button></a>
             </td>
+          <?php else :?>
+            <td>Sudah Dikonfirmasi</td>
+          <?php endif; ?>
             </tr>
       <?php
       } //print_r($mahasiswa);
