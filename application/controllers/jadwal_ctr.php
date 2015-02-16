@@ -50,23 +50,23 @@ class Jadwal_ctr extends CI_Controller
 			
 			// load model untuk cek jam di tabel transaksi
 			// ada atau tidak 
-			$tgl_booking = $this->jadwal->dataTransaksi($id_lap,$tgl);
-			if($tgl_booking==FALSE){
+			$transaksi = $this->jadwal->dataTransaksi($id_lap,$tgl);
+			
+			// print_r($tgl_booking[0]['jam']);
+			// print_r($tgl_booking[1]['jam']);
+			// die();
+
+
+			if($transaksi==FALSE){
 				//do nothing
 			}else{
-				foreach ($tgl_booking as $item) {
-					$jam=$item['jam'];
-					$status=$item['status'];
-					$nama_team=$item['nama_team'];
-				}
-				// untuk disabled button jika 
-				// jamnya ada di tabel transaksi sesuai id lapangan dan tgl
-				
-				for ($i=0; $i <16; $i++) { 
-					if($waktu[$i]==$jam){
-						$button='disabled="disabled"';
-					}else{
-						// do nothing
+				for ($i=0; $i <count($transaksi) ; $i++) { 
+					for ($j=0; $j <16 ; $j++) { 
+						if($transaksi[$i]['jam']==$waktu[$j]){
+							$button='disabled="disabled"';
+						}else{
+							//do nothing
+						}	
 					}
 				}
 			}
@@ -117,7 +117,7 @@ class Jadwal_ctr extends CI_Controller
 				echo					'<td>2</td>';
 				echo					'<td name="jam">08.00</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><button class="btn btn-success" action="#"> Booking </button></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>3</td>';
