@@ -47,7 +47,7 @@ class Jadwal_ctr extends CI_Controller
 			$tgl = $this->input->post('tgl');
 			$id_lap = $this->input->post('id');
 			$waktu=array("07.00","08.00","09.00","10.00","11.00","12.00","13.00","14.00","15.00","16.00","17.00","18.00","19.00","20.00","21.00","22.00");
-			$button='';
+			//$button='';
 			
 			// load model untuk cek jam di tabel transaksi
 			// ada atau tidak 
@@ -64,14 +64,21 @@ class Jadwal_ctr extends CI_Controller
 				for ($i=0; $i <count($transaksi) ; $i++) { 
 					for ($j=0; $j <16 ; $j++) { 
 						if($transaksi[$i]['jam']==$waktu[$j]){
-							$button='disabled="disabled"';
+							$button[$j]='disabled="disabled"';
+							// echo $button[$j];
+							// echo $j;
 						}else{
 							//do nothing
+							$button[$j]='disabled=" "';
 						}	
+						print_r($button[$j]);
+						// echo "     ";
 					}
 				}
 			}
-			
+		
+			// print_r($button);			
+			die();
 
 			// load model untuk ambil data lapangan
 			$data=$this->jadwal->dataLapangan($id_lap);
@@ -112,31 +119,31 @@ class Jadwal_ctr extends CI_Controller
 				echo					'<td>1</td>';
 				echo					'<td>'.$waktu[0].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=07.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button[0].'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>2</td>';
 				echo					'<td>'.$waktu[1].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=08.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=08.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button[1].'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>3</td>';
 				echo					'<td>'.$waktu[2].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=09.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=09.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button[2].'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>4</td>';
 				echo					'<td>'.$waktu[3].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=10.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=10.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button[3].'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>5</td>';
 				echo					'<td>'.$waktu[4].'</td>';
 				echo					'<td>Booked by Komsi</td>';
-				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=11.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button.'> Booking </button></a></td>';
+				echo					'<td><a href="pesan?id_lap='.$item['id_lap'].'&&id_futsal='.$item['id_futsal'].'&&jam=11.00&&tgl='.$tgl.'"><button class="btn btn-success" '.$button[4].'> Booking </button></a></td>';
 				echo				'</tr>';
 				echo				'<tr>';
 				echo					'<td>6</td>';
